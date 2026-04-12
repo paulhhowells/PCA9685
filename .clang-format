@@ -1,0 +1,14 @@
+---
+BasedOnStyle: Microsoft
+ColumnLimit: 0
+SpaceBeforeParens: Custom
+SpaceBeforeParensOptions:
+  AfterControlStatements: true
+  AfterFunctionDeclarationName: true
+  AfterFunctionDefinitionName: true
+  AfterIfMacros: true
+  AfterOverloadedOperator: false
+  BeforeNonEmptyParentheses: false
+TabWidth: 4
+UseTab: ForIndentation
+
