@@ -1,6 +1,7 @@
 ---
 BasedOnStyle: Microsoft
 ColumnLimit: 0
+AllowShortFunctionsOnASingleLine: Empty
 SpaceBeforeParens: Custom
 SpaceBeforeParensOptions:
   AfterControlStatements: true
