@@ -1,21 +1,25 @@
 #pragma once
+#include "I2C.h"
 #include <Wire.h>
 
-#ifndef PCA9685_H
-#define PCA9685_H
+// PCA9685 Register Addresses
+#define PCA9685_I2C_ADDRESS 0x40 // Default 7 bit I2C address
 
-class PCA9685
+class PCA9685 : public I2C
 {
   private:
-	uint8_t _i2c_address;
-	void setOpenDrainOutputMode ();
-	void writeRegister (uint8_t reg, uint8_t value);
+	void setPreScale (uint8_t prescale);
+	void sleep ();
+	void wake ();
 
   public:
-	PCA9685 ();
-	PCA9685 (uint8_t i2c_address);
+	PCA9685 () : I2C(PCA9685_I2C_ADDRESS) {}
+	PCA9685 (uint8_t i2c_address) : I2C(i2c_address) {}
 
 	bool begin ();
+	void setOpenDrainOutputMode ();
+	void setFrequency (uint16_t frequency);
+	void setPWMDuty (uint8_t pin, uint16_t on, uint16_t off);
 };
 
 // The PCA9685 datasheet expects to be driving LEDs and names its registers accordingly.
@@ -98,5 +102,3 @@ const uint8_t PCA9685_LED_15_ON_L = 0x42;
 const uint8_t PCA9685_LED_15_ON_H = 0x43;
 const uint8_t PCA9685_LED_15_OFF_L = 0x44;
 const uint8_t PCA9685_LED_15_OFF_H = 0x45;
-
-#endif
