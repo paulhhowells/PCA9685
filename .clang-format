@@ -1,4 +1,6 @@
 ---
+AlignConsecutiveComments: true
+AlignTrailingComments: true
 BasedOnStyle: Microsoft
 ColumnLimit: 0
 AllowShortFunctionsOnASingleLine: Empty
