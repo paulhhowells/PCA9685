@@ -6,6 +6,8 @@
 #define PCA9685_MODE_2_REGOUTDRV 0x04 // Bit 2 controls output mode
 #define PCA9685_PRESCALE 0xFE         // Prescaler for PWM output frequency
 
+#define frequencyHz 1600
+
 // Public methods:
 
 bool PCA9685::begin ()
@@ -13,7 +15,7 @@ bool PCA9685::begin ()
 	Wire.begin();
 
 	setOpenDrainOutputMode();
-	setFrequency(1600); // 1600 Hz
+	setFrequency(frequencyHz);
 
 	return true;
 }
