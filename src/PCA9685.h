@@ -2,7 +2,7 @@
 #include "I2C.h"
 #include <Wire.h>
 
-// PCA9685 Register Addresses
+// PCA9685 Register Address
 #define PCA9685_I2C_ADDRESS 0x40 // Default 7 bit I2C address
 
 class PCA9685 : public I2C
